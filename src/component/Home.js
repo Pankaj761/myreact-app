@@ -1,26 +1,26 @@
 import React from "react";
 
 export class Home extends React.Component{
+    constructor(props){
+        super();
+        this.age=props.age;
+    }
+    makeMeOlder(){
+        this.age+=3;
+        console.log(this.age);
+    }
     render(){
         var text="Some text";
         // console.log(this.props)
         return (
             <div>
                 <p>
-                 Hello World !!<br/>
-                    <p>{text}</p><br/>
                     <p>
-                        your name is : {this.props.user.name} and age is : <code>{this.props.user.age}</code>
+                        your name is : {this.props.name} and age is : <code>{this.age}</code>
                     </p>
-                    <div>
-                        <h4>Hobbies</h4>
-                        <ul>
-                            {this.props.user.hobies.map((x,i)=><li key={i}>{x}</li>) }
-                        </ul>
-                    </div>
+
                 </p>
-                <hr/>
-                {this.props.children}
+                <button onClick={this.makeMeOlder.bind(this)} className="btn btn-info"> make me older</button>
             </div>
         );
     }
