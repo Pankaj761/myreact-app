@@ -12,7 +12,10 @@ class App extends Component {
     return (
       <div className="container">
         <Header/>
-        <Home user={user} />
+          <Home user={user} >
+              <hr/>
+              <p>This is paragraph!!</p>
+          </Home>
       </div>
     );
   }
