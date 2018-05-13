@@ -3,6 +3,10 @@ import { Header } from "../component/Header"
 import { Home } from "../component/Home"
 
 class App extends Component {
+
+    greetHello(){
+        alert("Hello Pankaj!!")
+    }
   render() {
       var user={
           name:"Pankaj",
@@ -12,10 +16,7 @@ class App extends Component {
     return (
       <div className="container">
         <Header home="Home"/>
-          <Home name={"Pankaj"} initalAge={27} >
-              <hr/>
-              <p>This is paragraph!!</p>
-          </Home>
+          <Home name={"Pankaj"} initalAge={27} greet={this.greetHello} />
       </div>
     );
   }
